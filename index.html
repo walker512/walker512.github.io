@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101e32">
+  <meta name="description" content="walker512 的个人主页。AI 研究爱好者与独立开发者，关注 AI 智能体、大语言模型、脑机接口和可信 AI。">
+  <title>walker512 · 雪山观测站</title>
+  <link rel="icon" type="image/png" href="assets/aperture.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="scene.js" defer></script>
+  <script src="projects.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home">
+        <span class="aperture" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>个人主页
+      </a>
+      <button class="snow-toggle" type="button" aria-pressed="true" hidden>飘雪</button>
+      <nav class="home-nav" aria-label="主页导航">
+        <a href="#places" data-show-places>成果</a><a href="#writing">写作</a><a href="https://github.com/walker512" target="_blank" rel="noopener" aria-label="关于，在 GitHub 查看个人资料">关于</a>
+      </nav>
+      <nav class="room-nav" aria-label="观测站地点" hidden>
+        <a href="#research">研究</a><a href="#projects">项目</a><a href="#writing">写作</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div id="home" class="scene" data-view="home">
+      <div class="art" aria-hidden="true">
+        <img class="scene-art outside-art" src="assets/observatory.webp" alt="" width="1536" height="1024" fetchpriority="high">
+        <div class="snowfield" hidden></div>
+        <img class="scene-art inside-art" alt="" width="1536" height="1024" hidden>
+        <canvas class="motion-art" hidden></canvas>
+      </div>
+
+      <div class="scene-ui">
+        <section class="home-intro" aria-labelledby="home-title">
+          <h1 id="home-title" tabindex="-1">walker512</h1>
+          <p class="home-bio">
+            <span>AI 研究爱好者与独立开发者</span>
+            <span>关注 AI 智能体、大语言模型、脑机接口与可信 AI</span>
+          </p>
+          <button class="explore" type="button" aria-expanded="false" aria-controls="place-menu" hidden>
+            <span class="compass" aria-hidden="true"></span>探索场景
+          </button>
+          <div class="place-menu" id="place-menu" aria-labelledby="menu-title" hidden>
+            <div class="menu-heading">
+              <h2 id="menu-title">选择地点</h2>
+              <button class="menu-close" type="button" aria-label="关闭地点选择">×</button>
+            </div>
+            <a href="#research"><span>天文台</span><span>研究 <span aria-hidden="true">↗</span></span></a>
+            <a href="#projects"><span>工坊</span><span>项目 <span aria-hidden="true">↗</span></span></a>
+            <a href="#writing"><span>小屋</span><span>写作 <span aria-hidden="true">↗</span></span></a>
+          </div>
+        </section>
+
+        <aside class="source-preview" aria-labelledby="source-preview-title">
+          <div class="source-preview-header">
+            <h2 id="source-preview-title"><span aria-hidden="true"></span>开源项目</h2>
+            <a href="#projects">进工坊 <span aria-hidden="true">→</span></a>
+          </div>
+          <ul class="source-preview-list">
+            <li><a href="https://github.com/walker512/localization-qa-lite" target="_blank" rel="noopener"><span>localization-qa-lite</span><span class="repo-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://github.com/walker512/launch-review-lite" target="_blank" rel="noopener"><span>launch-review-lite</span><span class="repo-arrow" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </aside>
+
+        <nav class="hotspots" id="places" aria-label="雪山观测站地点">
+          <a class="hotspot" href="#research" style="--pin-x: 84.31%; --pin-y: 20.51%;" aria-label="天文台，查看研究">
+            <span class="pin" aria-hidden="true"></span><span class="leader" aria-hidden="true"></span><span class="hotspot-label">研究</span>
+          </a>
+          <a class="hotspot hotspot-left" href="#projects" style="--pin-x: 67.71%; --pin-y: 45.21%;" aria-label="工坊，查看项目">
+            <span class="pin" aria-hidden="true"></span><span class="leader" aria-hidden="true"></span><span class="hotspot-label">项目</span>
+          </a>
+          <a class="hotspot" href="#writing" style="--pin-x: 74.87%; --pin-y: 70.21%;" aria-label="小屋，查看写作">
+            <span class="pin" aria-hidden="true"></span><span class="leader" aria-hidden="true"></span><span class="hotspot-label">写作</span>
+          </a>
+        </nav>
+
+        <nav class="mobile-places" aria-label="雪山观测站地点">
+          <a href="#research"><strong>研究</strong><span>天文台</span></a>
+          <a href="#projects"><strong>项目</strong><span>工坊</span></a>
+          <a href="#writing"><strong>写作</strong><span>小屋</span></a>
+        </nav>
+
+        <section class="room-intro" id="research" aria-labelledby="research-title" tabindex="0">
+          <a class="return" href="#home"><span aria-hidden="true">←</span> 返回观测站</a>
+          <div class="room-heading">
+            <p class="place-name">天文台</p>
+            <h1 id="research-title" tabindex="-1">研究</h1>
+          </div>
+          <div class="room-example">
+            <p class="room-note">关注方向</p>
+            <h2 class="room-entry">AI 智能体与可信 AI</h2>
+            <p class="room-summary">关注大语言模型、脑机接口，以及 AI 系统的可靠性与可验证性。</p>
+          </div>
+        </section>
+
+        <section class="room-intro" id="projects" aria-labelledby="projects-title" tabindex="0">
+          <a class="return" href="#home"><span aria-hidden="true">←</span> 返回观测站</a>
+          <div class="room-heading">
+            <p class="place-name">工坊</p>
+            <h1 id="projects-title" tabindex="-1">项目</h1>
+          </div>
+          <section class="repo-catalog" aria-labelledby="repo-title">
+            <h2 id="repo-title">精选开源项目</h2>
+            <ul class="repo-list">
+              <li>
+                <a href="https://github.com/walker512/localization-qa-lite" target="_blank" rel="noopener">
+                  <strong>localization-qa-lite</strong><span class="repo-arrow" aria-hidden="true">↗</span>
+                  <span class="repo-description">离线检查游戏翻译中的漏译、占位符和术语一致性。</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/walker512/launch-review-lite" target="_blank" rel="noopener">
+                  <strong>launch-review-lite</strong><span class="repo-arrow" aria-hidden="true">↗</span>
+                  <span class="repo-description">整理上线前的源码检查提示与人工复核事项。</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/walker512/career-evidence-lite" target="_blank" rel="noopener">
+                  <strong>career-evidence-lite</strong><span class="repo-arrow" aria-hidden="true">↗</span>
+                  <span class="repo-description">在本地整理面试素材，追踪来源和覆盖缺口。</span>
+                </a>
+              </li>
+            </ul>
+            <a class="all-repos" href="https://github.com/walker512?tab=repositories" target="_blank" rel="noopener">查看全部仓库 <span aria-hidden="true">↗</span></a>
+          </section>
+        </section>
+
+        <section class="room-intro" id="writing" aria-labelledby="writing-title" tabindex="0">
+          <a class="return" href="#home"><span aria-hidden="true">←</span> 返回观测站</a>
+          <div class="room-heading">
+            <p class="place-name">小屋</p>
+            <h1 id="writing-title" tabindex="-1">写作</h1>
+          </div>
+          <div class="room-example">
+            <p class="room-note">写作</p>
+            <h2 class="room-entry">暂无公开文章</h2>
+            <p class="room-summary">目前可公开查看的项目与说明收录于 GitHub。</p>
+            <a class="all-repos" href="https://github.com/walker512?tab=repositories" target="_blank" rel="noopener">查看公开项目 ↗</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
